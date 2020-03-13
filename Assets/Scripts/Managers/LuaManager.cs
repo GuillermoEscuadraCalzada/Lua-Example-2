@@ -13,7 +13,9 @@ public class LuaManager : MonoBehaviour
     void Start()
     {
         vm = new LuaVM();
+        UserData.RegisterProxyType<LuaProxyGameObject, GameObject>(r => new LuaProxyGameObject(r));
     }
+
 
     public void LoadScript()
     {
